@@ -5,17 +5,17 @@ import java.util.Map;
 
 public class MorseTranslator {
 
-    // Karta från bokstav till morsekod, t.ex. 'A' -> ".-"
+   
     private Map<Character, String> letterToMorse = new HashMap<>();
-    // Karta från morsekod till bokstav, t.ex. ".-" -> 'A'
+   
     private Map<String, Character> morseToLetter = new HashMap<>();
 
-    // Konstruktor - körs när vi skapar ett nytt MorseTranslator-objekt
+    
     public MorseTranslator() {
         initMaps();
     }
 
-    // Fyller båda mapparna med alla bokstäver A-Z
+  
     private void initMaps() {
         add('A', ".-");
         add('B', "-...");
@@ -45,16 +45,13 @@ public class MorseTranslator {
         add('Z', "--..");
     }
 
-    // Hjälpmetod: lägger in både i letterToMorse och morseToLetter
+   
     private void add(char letter, String morse) {
         letterToMorse.put(letter, morse);
         morseToLetter.put(morse, letter);
     }
 
-    /**
-     * Gör om vanlig text (A-Z och mellanslag) till morsekod.
-     * Ex: "HEJ" -> ".... . .---"
-     */
+    
     public String textToMorse(String text) {
         String upper = text.toUpperCase();
         StringBuilder result = new StringBuilder();
