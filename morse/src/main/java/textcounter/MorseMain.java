@@ -15,7 +15,7 @@ import java.util.Scanner;
             System.out.print("Skriv 1 eller 2: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // läs bort radbrytningen efter siffran
+            scanner.nextLine(); 
 
             try {
                 if (choice == 1) {
