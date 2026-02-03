@@ -31,12 +31,12 @@ import java.util.Scanner;
                     System.out.println("Text: " + text);
 
                 } else {
-                    // Enkel felhantering om användaren väljer annat än 1 eller 2
+                   
                     System.out.println("Ogiltigt val. Avslutar programmet.");
                 }
 
             } catch (IllegalArgumentException e) {
-                // Här fångar vi fel från logik-klassen (t.ex. ogiltig morsekod eller bokstav)
+                
                 System.out.println("Fel: " + e.getMessage());
             }
 
