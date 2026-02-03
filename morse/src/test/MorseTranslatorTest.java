@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class MorseTranslator {
 
-    // Karta från bokstav till morsekod, t.ex. 'A' -> ".-"
+    
     private final Map<Character, String> letterToMorse = new HashMap<>();
-    // Karta från morsekod till bokstav, t.ex. ".-" -> 'A'
+   
     private final Map<String, Character> morseToLetter = new HashMap<>();
 
     public MorseTranslator() {
@@ -48,11 +48,7 @@ public class MorseTranslator {
         morseToLetter.put(morse, letter);
     }
 
-    /**
-     * Översätter engelsk text (A–Z, mellanslag ignoreras) till morsekod.
-     * Ex: "HEJ" -> ".... . .---"
-     *     "HELLO WORLD" -> ".... . .-.. .-.. --- .-- --- .-. .-.. -.."
-     */
+    
     public String textToMorse(String text) {
         if (text == null || text.isBlank()) {
             throw new IllegalArgumentException("Texten får inte vara tom.");
@@ -80,17 +76,13 @@ public class MorseTranslator {
         return result.toString().trim();
     }
 
-    /**
-     * Översätter morsekod till engelsk text.
-     * Bokstäver separeras med mellanslag. Ordseparation hanteras inte.
-     * Ex: ".... . .---" -> "HEJ"
-     */
+   
     public String morseToText(String morseCode) {
         if (morseCode == null || morseCode.isBlank()) {
             throw new IllegalArgumentException("Morse-strängen får inte vara tom.");
         }
 
-        // Checka att bara '.', '-' och whitespace används
+     
         for (int i = 0; i < morseCode.length(); i++) {
             char ch = morseCode.charAt(i);
             if (ch != '.' && ch != '-' && !Character.isWhitespace(ch)) {
